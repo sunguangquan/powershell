@@ -30,10 +30,12 @@ $pt = pwd
     $code = $temp[0]
     $fujian = @()
     $childits = Get-ChildItem $code
+    if($childits){
     foreach($childit in $childits){
         $fujian1 = Join-Path -path $pt.Path -ChildPath $code
         $fujian += Join-Path -Path $fujian1 -ChildPath $childit
         }
+    }
     $cc = $temp[2..$temp.length] | Where-Object {$_}
     $to = $temp[1]
 
